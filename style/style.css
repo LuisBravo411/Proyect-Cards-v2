@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+
+:root {
+    /* Primary Yellow */
+    /* --primary-yellow-1: #ffff00; */
+    --primary-yellow-1: hsl(50, 100%, 50%);
+    --primary-yellow-2: #ffff56;
+    --primary-yellow-3: #ffff81;
+    /* Black and gray */
+    --Black:#090909;
+    /* grey used for paragraphs */
+    --grey-1: hsl(0, 0%, 10%);
+    --grey-2: hsl(0, 0%, 20%);
+    --grey-3: hsl(0, 0%, 30%);
+    --grey-4: hsl(0, 0%, 40%);
+    --grey-5: hsl(0, 0%, 50%);
+    --grey-6: hsl(0, 0%, 60%);
+    --grey-7: hsl(0, 0%, 70%);
+    --grey-8: hsl(0, 0%, 80%);
+    --grey-9: hsl(0, 0%, 89%);
+    --grey-10: hsl(0, 0%, 96%);
+    --white: #fff;
+    --red-dark: hsl(360, 67%, 44%);
+    --red-light: hsl(360, 71%, 66%);
+    --green-dark: hsl(125, 67%, 44%);
+    --green-light: hsl(125, 71%, 66%);
+
+    /* Fuentes */
+    --ff-primary: "Roboto", sans-serif;
+    --ff-secondary: "Open Sans", sans-serif;
+
+    /* Transition */
+    --transition: all 0.2s linear;
+    --fastTransition: all 0.1s linear;
+
+    /* Shadows */
+    --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--ff-secondary);
+}
+
+body{
+    background-color: var(--grey-4);
+}
+h1, h2, h3, h4{
+    text-transform: uppercase;
+}
+
+i{
+    color: black;
+    font-size: 20px;
+}
+
+.nav-header{
+    background-color: var(--primary-yellow-1);
+    height: 70px;
+    box-sizing: var(--dark-shadow);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--Black);
+}
+.nav-header > h1{
+    /* justify-content: ; */
+}
+.nav-header > h1, a {
+    margin: 0 20px;
+}
