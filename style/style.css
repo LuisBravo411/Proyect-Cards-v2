@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
-
 :root {
     /* Primary Yellow */
     /* --primary-yellow-1: #ffff00; */
@@ -24,51 +23,181 @@
     --red-light: hsl(360, 71%, 66%);
     --green-dark: hsl(125, 67%, 44%);
     --green-light: hsl(125, 71%, 66%);
-
     /* Fuentes */
     --ff-primary: "Roboto", sans-serif;
     --ff-secondary: "Open Sans", sans-serif;
-
     /* Transition */
     --transition: all 0.2s linear;
     --fastTransition: all 0.1s linear;
-
     /* Shadows */
     --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    /* Border */
+    --border-5: 10px;
 }
-
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: var(--ff-secondary);
 }
-
+/* -----------------------------------General----------------------------------- */
 body{
-    background-color: var(--grey-4);
+    background-color: var(--grey-1);
 }
 h1, h2, h3, h4{
     text-transform: uppercase;
 }
-
 i{
     color: black;
     font-size: 20px;
 }
-
+.none{
+    display: none;
+}
+/* -----------------------------------Header----------------------------------- */
 .nav-header{
     background-color: var(--primary-yellow-1);
     height: 70px;
     box-sizing: var(--dark-shadow);
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     color: var(--Black);
-}
-.nav-header > h1{
-    /* justify-content: ; */
 }
 .nav-header > h1, a {
     margin: 0 20px;
 }
+/* -----------------------------------SideBar----------------------------------- */
+.sidebar-toggle{
+    position: fixed;
+    top: 18px;
+    left: 30px;
+    background-color: transparent;
+    border-color: transparent;
+    color: var(--Black);
+    cursor: pointer;
+    transition: var(--transition);
+}
+.sidebar-toggle > i{
+    font-size: 30px;
+    transition: var(--transition);
+}
+.sidebar-toggle:hover{
+    animation: bounce 2s ease-in-out infinite;
+}
+.sidebar-toggle > i:hover{
+    color: var(--grey-3);
+}
+.sidebar-close{
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    background-color: transparent;
+    border: transparent;
+    cursor: pointer;
+    transition: var(--transition);
+}
+.sidebar-close>i{
+    transition: var(--transition);
+    color: var(--grey-10);
+    font-size: 30px;
+}
+.sidebar-close:hover{
+    transform: scale(1.2);
+}
+.sidebar-close>i:hover{
+    color: var(--grey-8);
+}
+@keyframes bounce {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+}
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--Black);
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    row-gap: 1rem;
+    box-shadow: var(--clr-red-dark);
+    transition: var(--transition);
+    transform: translate(-100%);
+    color: var(--grey-10);
+}
+.show-sidebar{
+    transform: translate(0);
+}
+@media screen and (min-width: 700px) {
+    .sidebar{
+        width: 40%;
+    }
+}
+/* -----------------------------------Card Styles----------------------------------- */
+.card-row{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+.card{
+    width: 23%;
+    height: 500px;
+    background-color: var(--grey-2);
+    box-shadow: var(--dark-shadow);
+    border-radius: var(--border-5);
+    transition: var(--transition);
+}
+.card:hover{
+    transform: scale(1.015);
+}
+.card-header{
+    background-color: var(--primary-yellow-1);
+    height: 70px;
+    box-sizing: var(--dark-shadow);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: var(--Black);
+    border-top-left-radius: var(--border-5);
+    border-top-right-radius: var(--border-5);
+}
+
+    /* Card modal */
+/* .card-modal{
+    display: grid;
+    place-items: center;
+    position: absolute;
+    top: 0;
+    margin: 5px 0;
+    width: 40%;
+    height: 98vh;
+    transition: var(--transition);
+    transform: translate(0);
+}
+.card-modal:hover{
+    transform: none;
+}
+.card-modal>.card-header{
+    position: absolute;
+    top: 0;
+    background-color: var(--primary-yellow-1);
+    height: 70px;
+    width: 100%;
+    box-sizing: var(--dark-shadow);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: var(--Black);
+    border-top-left-radius: var(--border-5);
+    border-top-right-radius: var(--border-5);
+} */
