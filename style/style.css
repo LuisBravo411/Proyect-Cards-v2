@@ -19,7 +19,7 @@
     --grey-9: hsl(0, 0%, 89%);
     --grey-10: hsl(0, 0%, 96%);
     --white: #fff;
-    --red-dark: hsl(360, 67%, 44%);
+    --red-dark: hsl(0, 67%, 44%);
     --red-light: hsl(360, 71%, 66%);
     --green-dark: hsl(125, 67%, 44%);
     --green-light: hsl(125, 71%, 66%);
@@ -48,6 +48,7 @@ body{
 h1, h2, h3, h4{
     text-transform: uppercase;
 }
+
 i{
     color: black;
     font-size: 20px;
@@ -55,6 +56,27 @@ i{
 .none{
     display: none;
 }
+.btn{
+    background-color: transparent;
+    color: var(--grey-10);
+    letter-spacing: 2px;
+    font-weight: 700;
+    display: inline-block;
+    transition: var(--transition);
+    border: 2px solid var(--grey-9);
+    border-radius: 5px;
+    padding: 5px 15px;
+    cursor: pointer;
+}
+.btn:hover{
+    color: var(--grey-7);
+    border: 2px solid var(--grey-7);
+}
+.btn:active{
+    color: var(--grey-10);
+
+}
+
 /* -----------------------------------Header----------------------------------- */
 .nav-header{
     background-color: var(--primary-yellow-1);
@@ -144,10 +166,22 @@ i{
     }
 }
 /* -----------------------------------Card Styles----------------------------------- */
+.card-overlay{
+    width: 100%;
+    height: 100%;
+    background-color: hsla(0, 0%, 0%, 0.6);
+    z-index: 10;
+    position: fixed;
+    top: 0;
+}
+.show-card{
+    z-index: 20;
+
+}
 .card-row{
     display: flex;
     justify-content: space-around;
-    margin-top: 20px;
+    margin: 20px 20px;
 }
 .card{
     width: 23%;
@@ -172,32 +206,30 @@ i{
     border-top-right-radius: var(--border-5);
 }
 
-    /* Card modal */
-/* .card-modal{
-    display: grid;
-    place-items: center;
-    position: absolute;
-    top: 0;
-    margin: 5px 0;
-    width: 40%;
-    height: 98vh;
-    transition: var(--transition);
-    transform: translate(0);
-}
-.card-modal:hover{
-    transform: none;
-}
-.card-modal>.card-header{
-    position: absolute;
-    top: 0;
-    background-color: var(--primary-yellow-1);
-    height: 70px;
-    width: 100%;
-    box-sizing: var(--dark-shadow);
+/* -----------------------------------Card Color Fleeper----------------------------------- */
+
+.color-fleeper{
+    /* width: 90%; */
+    margin: auto;
+    color: var(--grey-10);
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    color: var(--Black);
-    border-top-left-radius: var(--border-5);
-    border-top-right-radius: var(--border-5);
-} */
+    flex-direction: column;
+    text-align: center;
+    height: 430px;
+    border-bottom-left-radius: var(--border-5);
+    border-bottom-right-radius: var(--border-5);
+}
+
+.color-fleeper>.container{
+    background-color: var(--grey-2);
+    width: 90%;
+    border-radius: var(--border-5);
+    padding: 5px 5px 20px 5px;
+}
+.color-fleeper>.container>h2{
+    margin: 10px;
+    font-size: 20px;
+}
+
