@@ -64,40 +64,27 @@ cards.forEach(function(card){
         if (modalCard.contains("card-1")){
             const card1 = document.querySelector(".card-1");
             cardVisibility(card1)
-            // Card Code CARD #1-----------------------------------------------------------
-            console.log(modalCard)
-            // End code------------------------------------------------------------
         }
         // Card #2 
         if (modalCard.contains("card-2")){
             const card2 = document.querySelector(".card-2");
             cardVisibility(card2)
-            // Card Code CARD #2-----------------------------------------------------------
-
-
-            // End code------------------------------------------------------------
         } 
         // Card #3
         if (modalCard.contains("card-3")){
             const card3 = document.querySelector(".card-3");
             cardVisibility(card3)
-            // Card Code CARD #3-----------------------------------------------------------
-            // console.log("HELLO CARD 3")
-            // End code------------------------------------------------------------
-
         } 
         // Card #4
         if (modalCard.contains("card-4")){
             const card4 = document.querySelector(".card-4");
             cardVisibility(card4 )
-            // Card Code CARD #4-----------------------------------------------------------
-
-            // End code------------------------------------------------------------
-
         }
     })
 })
 
+
+// Card #1
 const hex = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"];
 const btnCF = document.getElementById("btnCF");
 const color = document.querySelector(".color");
@@ -121,7 +108,9 @@ btnCF.addEventListener("click", randomColor);
 function getRandomNumber(){
     return Math.floor(Math.random()* hex.length);
 }
+// END CARD #1
 
+// Card #2
 const value = document.getElementById("value")
 const btns = document.querySelectorAll(".btn-counter")
 btns.forEach(function(btn){
@@ -147,3 +136,75 @@ btns.forEach(function(btn){
         value.textContent = count;
     })
 })
+// END CARD #2
+
+// Card #3
+const reviewCard3 = [
+    {
+        id: 1,
+        img: "img/casas/casa_1.jpg",
+        title: "Casa numero 1",
+        metrosCuadrados: "400",
+        numHabitaciones: "7",
+        desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla saepe officiis cumque et deleniti quasi numquam, libero magnam quia quo voluptatibus similique, delectus soluta placeat velit quidem minima, maiores illum?"
+    },
+    {
+        id: 2,
+        img: "img/casas/casa_2.jpg",
+        title: "Casa numero 2",
+        metrosCuadrados: "200",
+        numHabitaciones: "4",
+        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid possimus aut aspernatur deleniti, quod autem nihil ratione sunt in sed."
+    },
+    {
+        id: 3,
+        img: "img/casas/casa_3.jpeg",
+        title: "Casa numero 3",
+        metrosCuadrados: "150",
+        numHabitaciones: "5",
+        desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur repudiandae veniam quae placeat deleniti dolorem."
+    }   
+]
+
+const imgCasa = document.getElementById("casaImg");
+const titleCasa = document.querySelector(".title");
+const metrosCuadrados = document.querySelector(".metros-cuadrados");
+const numHabitaciones = document.querySelector(".habitaciones");
+const desc = document.querySelector(".desc");
+
+const btnCasaR = document.querySelector(".btn-r");
+const btnCasaL = document.querySelector(".btn-l");
+let currentId = 0;
+
+window.addEventListener("DOMContentLoaded", function(){
+    currentId = Math.floor(Math.random() * reviewCard3.length)
+    showItem(currentId);
+})
+
+function showItem(currentItem){
+    const item = reviewCard3[currentItem];
+
+    imgCasa.src = item.img;
+    titleCasa.textContent = item.title;
+    metrosCuadrados.textContent = item.metrosCuadrados;
+    numHabitaciones.textContent = item.numHabitaciones;
+    desc.textContent = item.desc;
+}
+
+
+btnCasaR.addEventListener("click", function(){
+    currentId++;
+    if(currentId > reviewCard3.length - 1){
+        currentId = 0;
+    }
+    showItem(currentId)
+})
+
+btnCasaL.addEventListener("click", function(){
+    currentId--;
+    if(currentId < 0){
+        currentId = reviewCard3.length - 1
+    }
+    showItem(currentId)
+})
+// END CARD #3

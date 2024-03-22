@@ -253,3 +253,51 @@ i{
     font-size: 44px;
     color: var(--grey-10);
 }
+/* -----------------------------------Card #3 Review----------------------------------- */
+.review-casas{
+    color: var(--grey-10);
+    height: 430px;
+}
+
+.review-casas>img{
+    width: 100%;
+    height: 150px;
+}
+
+.review-casas>.info{
+    width: 90%;
+    height: 280px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.review-casas>.info p{
+    font-size: 14px;
+    font-weight: 700;
+}
+.review-casas>.info span{
+    font-weight: 400;
+}
+.review-casas>.title{
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.review-casas .btn-container{
+    position: relative;
+    margin: 20px auto;
+    /* display: flex;
+    flex-direction: row;
+    justify-content: space-between; */
+}
+.btn-review i{
+    color: var(--grey-9);
+    transition: var(--transition);
+    cursor: pointer;
+    font-size: 28px;
+}
+
+.btn-review i:hover{
+    color: var(--grey-5);
+}
