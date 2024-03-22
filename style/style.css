@@ -3,8 +3,8 @@
     /* Primary Yellow */
     /* --primary-yellow-1: #ffff00; */
     --primary-yellow-1: hsl(50, 100%, 50%);
-    --primary-yellow-2: #ffff56;
-    --primary-yellow-3: #ffff81;
+    --primary-yellow-2: hsl(60, 100%, 67%);
+    --primary-yellow-3: hsl(60, 100%, 75%);
     /* Black and gray */
     --Black:#090909;
     /* grey used for paragraphs */
@@ -194,6 +194,13 @@ i{
 .card:hover{
     transform: scale(1.015);
 }
+.card-active{
+    transform: scale(1.1);
+    box-shadow: 0 1px 10px hsla(50, 100%, 50%, 0.159);;
+}
+.card-active:hover{
+    transform: scale(1.1);
+}
 .card-header{
     background-color: var(--primary-yellow-1);
     height: 70px;
@@ -205,8 +212,12 @@ i{
     border-top-left-radius: var(--border-5);
     border-top-right-radius: var(--border-5);
 }
-
-/* -----------------------------------Card Color Fleeper----------------------------------- */
+.card-body{
+    height: 430px;
+    border-bottom-left-radius: var(--border-5);
+    border-bottom-right-radius: var(--border-5);
+}
+/* -----------------------------------Card #1 Color Fleeper----------------------------------- */
 
 .color-fleeper{
     /* width: 90%; */
@@ -217,9 +228,7 @@ i{
     align-items: center;
     flex-direction: column;
     text-align: center;
-    height: 430px;
-    border-bottom-left-radius: var(--border-5);
-    border-bottom-right-radius: var(--border-5);
+
 }
 
 .color-fleeper>.container{
@@ -232,4 +241,15 @@ i{
     margin: 10px;
     font-size: 20px;
 }
+/* -----------------------------------Card #2 Counter----------------------------------- */
+.counter{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
+.counter>span{
+    font-size: 44px;
+    color: var(--grey-10);
+}
