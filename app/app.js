@@ -17,72 +17,34 @@ sidebarClose.addEventListener("click", function(){
     sidebar.classList.remove("show-sidebar");
 })
 
-// CARDS
+// CARDS SHOW
 
 const cards = document.querySelectorAll(".card");
 const cardOverlay = document.querySelector(".card-overlay")
 
-cardOverlay.addEventListener("click",function(){
-    cardOverlay.classList.add("none")
-    // cards.classList.remove("show-card")
-})
-
 cards.forEach(function(card){
-    card.addEventListener("click",function(e){
-        // console.log(card)
-        // let openOverlay = function(){
-        //     cardOverlay.classList.remove("none")
-        // }
-        let showCard = function(e){
-            e.classList.add("show-card");
-            e.classList.add("card-active");
-            cardOverlay.classList.remove("none");
-        
-            // openOverlay()
-            // if(!e.contains("card-active")){
-            //     e.classList.add("show-card");
-            //     e.classList.add("card-active");
-            //     cardOverlay.classList.remove("none");
-            // } else {
-            //     e.classList.remove("show-card");
-            //     e.classList.remove("card-active");
-            //     cardOverlay.classList.add("none");
-            // }
-        }
-        let cardVisibility = function(e){
-            const card1 = document.querySelector(".card-1");
-            e.addEventListener("click", showCard(e))
+    const cardBtn = card.querySelector(".card-btn")
+    
+    
+    cardBtn.addEventListener("click", function(){
+        // console.log(cardBtn)
+        cards.forEach(function(item){
+            if(item !== card){
+                item.classList.remove("show-card")
+                item.classList.remove("card-active")
+            }
             cardOverlay.addEventListener("click", function(){
-                e.classList.remove("show-card")
-                e.classList.remove("card-active")
+                item.classList.remove("show-card")
+                item.classList.remove("card-active")
+                cardOverlay.classList.add("none");
             })
-        }
-        
-        
-        const modalCard = e.currentTarget.classList;
-        // Card #1
-        if (modalCard.contains("card-1")){
-            const card1 = document.querySelector(".card-1");
-            cardVisibility(card1)
-        }
-        // Card #2 
-        if (modalCard.contains("card-2")){
-            const card2 = document.querySelector(".card-2");
-            cardVisibility(card2)
-        } 
-        // Card #3
-        if (modalCard.contains("card-3")){
-            const card3 = document.querySelector(".card-3");
-            cardVisibility(card3)
-        } 
-        // Card #4
-        if (modalCard.contains("card-4")){
-            const card4 = document.querySelector(".card-4");
-            cardVisibility(card4 )
-        }
+        })
+        card.classList.add("show-card")
+        card.classList.add("card-active")
+        cardOverlay.classList.remove("none");
     })
+    
 })
-
 
 // Card #1
 const hex = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"];
@@ -131,7 +93,7 @@ btns.forEach(function(btn){
           value.style.color = "red";
         }
         if (count === 0) {
-          value.style.color = "#222";
+          value.style.color = "hsl(0, 0%, 96%)";
         }
         value.textContent = count;
     })
