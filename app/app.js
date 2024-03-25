@@ -16,6 +16,56 @@ sidebarClose.addEventListener("click", function(){
     sidebarToggle.classList.remove("none")
     sidebar.classList.remove("show-sidebar");
 })
+// CARDS GENERATOR
+
+const itemCardCategory = [
+    {
+        id:1,
+        color: "",
+        title: "Item 1",
+    },
+    {
+        id:2,
+        color: "style='background-color: hsl(0, 0%, 40%);'",
+        title: "Item 2",
+    },
+    {
+        id:3,
+        color: "style='background-color: hsl(0, 0%, 60%);'",
+        title: "Item 3",
+    },
+    {
+        id:4,
+        color: "style='background-color: hsl(0, 0%, 80%);'",
+        title: "Item 4",
+    },
+]
+const cardRow = document.querySelector(".CardRow2");
+window.addEventListener("DOMContentLoaded", function(){
+    displayCardItem(itemCardCategory)
+    // console.log(itemCardCategory)
+})
+function displayCardItem(cardItem){
+    console.log("hello");
+    let displayCard = cardItem.map(function (item) {
+        return `<div class="card">
+                    <div class="card-btn">
+                        <div class="card-header">
+                            <div>
+                                <h4>${item.title}</h4>
+                            </div>
+                        </div>
+                        <div class="card-body" ${item.color}>
+
+                        </div>
+                    </div>
+                </div>`;
+    }) 
+    displayCard = displayCard.join("");
+    console.log(displayCard);
+
+    cardRow.innerHTML = displayCard;
+}
 
 // CARDS SHOW
 
